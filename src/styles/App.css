@@ -1,0 +1,503 @@
+/* Base styles */
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;  /* prevent horizontal scroll only */
+  overflow-y: auto;    /* allow vertical scroll */
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Rest of your existing styles... */
+
+
+.TopH1 {
+  /* font-size: 3.2em; */
+  line-height: 1.1;
+   font-size: 2.2rem;
+}
+.text-paragraph {
+  text-align: justify;
+  margin: 50px 150px; /* top & bottom = 0, left & right = 100px */
+  font-size: 1.2rem;
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+
+
+button:hover {
+  border-color: #646cff;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #eee;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .menu a {
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar .menu a:hover {
+  color: #646cff;
+}
+
+/* Responsive menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.customerlogos {
+  display: none; /* Hide the original customer logos display */
+}
+
+
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .navbar .menu.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .menu a {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.NewsH1{
+  margin: 80px 0px 0px 0px;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  position: relative;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1rem;
+  }
+
+  .contact-form-container form div input,
+  .contact-form-container form div textarea {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Customer slider styles */
+.customer-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.customer-slider {
+  display: flex;
+  overflow-y: visible;
+  overflow-x: hidden;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo-slide {
+  flex: 0 0 30%;
+  min-height: 0px; /* or a height you know fits the content */
+  padding: 0 15px;
+  text-align: center;
+  overflow: visible;
+}
+
+.logo-slide {
+  padding-bottom: 20px; /* ensures space for caption */
+}
+
+
+.logo-slide figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-slide img {
+  width: 250px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-slide figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Ubuntu', sans-serif;
+  /* Make figcaption more vibrant with these optional adjustments */
+  color: #222; /* Slightly darker for better contrast */
+  font-weight: 600; /* A bit bolder */
+  letter-spacing: 0.2px; /* Slightly improved readability */
+}
+
+.slider-nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.slider-nav:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev-button {
+  margin-right: 10px;
+}
+
+.next-button {
+  margin-left: 10px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+  background-color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .customer-slider {
+    width: 70%;
+  }
+  
+  .logo-slide {
+    flex: 0 0 100%;
+  }
+  
+  .slider-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .logo-slide img {
+    width: 200px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-slider-container {
+    flex-direction: column;
+  }
+  
+  .slider-nav {
+    margin: 10px 0;
+  }
+  
+  .prev-button {
+    order: 2;
+  }
+  
+  .next-button {
+    order: 3;
+  }
+  
+  .customer-slider {
+    order: 1;
+    width: 90%;
+  }
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  max-width: 800px;
+  margin: 100px auto 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  overflow-y: auto;
+  height: auto;
+  max-height: 90vh;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.contact-form-container h2 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-form-container form {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-form-container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-container form div label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-form-container form div input,
+.contact-form-container form div textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-form-container form div input:focus,
+.contact-form-container form div textarea:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+  outline: none;
+}
+
+.contact-form-container form div textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form-container button {
+  background-color: #646cff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-form-container button:hover {
+  background-color: #5052cc;
+  transform: translateY(-2px);
+}
+
+.contact-form-container button:active {
+  transform: translateY(0);
+}
+
+.contact-form-container p {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-form-container p:contains("Success") {
+  background-color: #e6f7e6;
+  color: #2e7d32;
+}
+
+.contact-form-container p:contains("Oops") {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.contact-info {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-info h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #555;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-info a {
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact-info a:hover {
+  color: #5052cc;
+  text-decoration: underline;
+}
+
+/* Responsive Contact Form */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 20px;
+    margin: 30px 15px;
+    max-width: 100%;
+  }
+  
+  .contact-form-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+  }
+}
